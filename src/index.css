@@ -1,0 +1,267 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-en-display: 'Outfit', sans-serif;
+    --font-en-body: 'Plus Jakarta Sans', sans-serif;
+    --font-en-serif: 'Cinzel', serif;
+    --font-ar-display: 'Cairo', sans-serif;
+    --font-ar-body: 'IBM Plex Sans Arabic', sans-serif;
+
+    --bg-main: #09090b;
+    --bg-surface: #111115;
+    --bg-surface-elevated: #18181f;
+    --bg-surface-glass: rgba(17, 17, 21, 0.75);
+    
+    --color-gold: #d4af37;
+    --color-gold-light: #e5c158;
+    --color-gold-dark: #b89327;
+    --color-gold-muted: rgba(212, 175, 55, 0.15);
+    
+    --text-primary: #f4f4f6;
+    --text-secondary: #9e9ea7;
+    --text-muted: #65656e;
+    
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --border-gold: rgba(212, 175, 55, 0.3);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-en-body);
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+  }
+
+  html[dir="rtl"] {
+    font-family: var(--font-ar-body);
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #09090b;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #23232b;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #d4af37;
+  }
+}
+
+.font-display-en {
+  font-family: var(--font-en-display);
+}
+
+.font-display-ar {
+  font-family: var(--font-ar-display);
+}
+
+.font-serif-en {
+  font-family: var(--font-en-serif);
+}
+
+/* Subtle luxury grain / glow utilities without slop */
+.gold-glow {
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.12);
+}
+
+.gold-glow-hover:hover {
+  box-shadow: 0 0 35px rgba(212, 175, 55, 0.22);
+}
+
+.luxury-border {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.luxury-border-gold {
+  border: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.backdrop-blur-luxury {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Liquid Glass System */
+.liquid-glass {
+  background: rgba(14, 14, 20, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.liquid-glass-elevated {
+  background: rgba(18, 17, 25, 0.72);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+}
+
+.liquid-glass-gold {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.09) 0%, rgba(15, 14, 20, 0.75) 100%);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 30px rgba(212, 175, 55, 0.12);
+}
+
+.liquid-glass-subtle {
+  background: rgba(10, 10, 15, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.liquid-glass-pill {
+  background: rgba(15, 14, 20, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.liquid-glass-input {
+  background: rgba(20, 19, 28, 0.65);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.liquid-glass-input:focus {
+  border-color: rgba(212, 175, 55, 0.6);
+  background: rgba(26, 25, 36, 0.85);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+}
+
+/* RTL Helpers */
+[dir="rtl"] .rtl-flip {
+  transform: scaleX(-1);
+}
+
+/* Apogee Liquid Glass Keyframes and Animation Utilities */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-down {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-left {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-right {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bar-grow {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+.animate-fade-up {
+  opacity: 0;
+  animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-down {
+  opacity: 0;
+  animation: fade-down 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-left {
+  opacity: 0;
+  animation: fade-left 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-right {
+  opacity: 0;
+  animation: fade-right 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-scale {
+  opacity: 0;
+  animation: fade-scale 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-bar-grow {
+  transform-origin: bottom;
+  animation: bar-grow 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Chat scrollbar utilities */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #25D366;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+

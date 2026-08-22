@@ -1,0 +1,6 @@
+{
+  "name": "GYM Demo Dubai",
+  "description": "A bilingual English & Arabic premium luxury gym web experience for Dubai, UAE featuring high-performance training, bespoke memberships, and authentic RTL design.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
